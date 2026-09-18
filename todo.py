@@ -4,11 +4,16 @@ def add_task(name):
     tasks.append(name)
 
 def show_tasks():
-    print("=== Todo List ===")
+    print(f"=== To-Do List ({len(tasks)} items) ===")
     for i, t in enumerate(tasks, 1):
         print(f"{i}. {t}")
-
+def add_task(name):
+    if name in tasks:
+        print(f"'{name}' already exists, skipping")
+        return
+    tasks.append(name)
 def main():
+    add_task("Learn Git")
     add_task("Learn Git")
     show_tasks()
 
